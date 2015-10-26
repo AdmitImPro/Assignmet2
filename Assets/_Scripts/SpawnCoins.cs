@@ -1,0 +1,30 @@
+﻿/* Author: Arunan Shan */
+/* File: SpawnCoin.cs */
+/* Creation Date: Oct 19, 2015 */
+/* Description: This script spawns the coin object*/
+/* Last Modified by: Monday October 25, 2015 */
+using UnityEngine;
+using System.Collections;
+
+public class SpawnCoins : MonoBehaviour {
+	
+	public Transform[] coinSpawns;
+	public GameObject coin;
+	
+	// Use this for initialization
+	void Start () {
+		
+		Spawn();
+	}
+	
+	void Spawn()
+	{
+		for (int i = 0; i < coinSpawns.Length; i++)
+		{
+			int coinFlip = Random.Range (0, 2);
+			if (coinFlip > 0)
+				Instantiate(coin, coinSpawns[i].position, Quaternion.identity);
+		}
+	}
+	
+}

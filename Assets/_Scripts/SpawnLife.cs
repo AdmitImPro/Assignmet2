@@ -1,0 +1,30 @@
+﻿/* Author: Arunan Shan */
+/* File: SpawnLife.cs */
+/* Creation Date: Oct 19, 2015 */
+/* Description: This script spawns enemies on platforms*/
+/* Last Modified by: Monday October 25, 2015 */
+using UnityEngine;
+using System.Collections;
+
+public class SpawnLife : MonoBehaviour {
+	
+	public Transform[] lifeSpawns;
+	public GameObject life;
+	
+	// Use this for initialization
+	void Start () {
+		
+		Spawn();
+	}
+	
+	void Spawn()
+	{
+		for (int i = 0; i < lifeSpawns.Length; i++)
+		{
+			int lifeFlip = Random.Range (0, 2);
+			if (lifeFlip > 0)
+				Instantiate(life, lifeSpawns[i].position, Quaternion.identity);
+		}
+	}
+	
+}
