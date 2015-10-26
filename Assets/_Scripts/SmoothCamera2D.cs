@@ -1,7 +1,7 @@
 ﻿/* Author: Arunan Shan */
 /* File: SmoothCamera2D.cs */
 /* Creation Date: Oct 19, 2015 */
-/* Description: This script makes the main camera follow the player*/
+/* Description: Makes the main camera follow the player*/
 /* Last Modified by: Monday October 25, 2015 */
 using UnityEngine;
 using System.Collections;
@@ -15,12 +15,11 @@ public class SmoothCamera2D : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.R))//input is "press "r" for restart
-		{
-			Debug.Log("Restarted!");
+		if (Input.GetKeyDown (KeyCode.R)) {
 			Application.LoadLevel(Application.loadedLevel);
 		}
-	
+
+	// Follows transform of player
 		if (target)
 		{
 			Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target.position);

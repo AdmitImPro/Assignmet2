@@ -1,7 +1,7 @@
 ﻿/* Author: Arunan Shan */
 /* File: PlayerCollider.cs */
 /* Creation Date: Oct 19, 2015 */
-/* Description: This script controls the score & collider with object*/
+/* Description: Controls the score & collider with object*/
 /* Last Modified by: Monday October 25, 2015 */
 using UnityEngine;
 using System.Collections;
@@ -19,6 +19,7 @@ public class PlayerCollider : MonoBehaviour {
 	public int  scoreValue = 0;
 	public int  livesValue = 3;
 
+	
 	// Use this for initialization
 	void Start () {
 		this._SetScore ();
@@ -29,6 +30,8 @@ public class PlayerCollider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 	
 	}
 
@@ -48,6 +51,11 @@ public class PlayerCollider : MonoBehaviour {
 				this._EndGame();
 			}
 		}
+
+		if (otherGameObject.tag == "Death") {
+			this._EndGame();
+
+		}
 		this._SetScore ();
 	}
 
@@ -57,7 +65,7 @@ public class PlayerCollider : MonoBehaviour {
 		this.scoreLabel.text = "Score: " + this.scoreValue;
 		this.livesLabel.text = "Lives: " + this.livesValue;
 	}
-
+	//ends game displays game over text
 	private void _EndGame() {
 		Destroy(gameObject);
 		
@@ -67,7 +75,7 @@ public class PlayerCollider : MonoBehaviour {
 		this.finalScoreLabel.enabled = true;
 		this.restartLabel.enabled = true;
 		this.finalScoreLabel.text = "Score: " + this.scoreValue;
-		
+
 		
 		
 		

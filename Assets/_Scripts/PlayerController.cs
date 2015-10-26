@@ -1,7 +1,7 @@
 ﻿/* Author: Arunan Shan */
 /* File: PlayerController.cs */
 /* Creation Date: Oct 19, 2015 */
-/* Description: This script controls player movement, audio and animation*/
+/* Description: Controls player movement, audio and animation*/
 /* Last Modified by: Monday October 25, 2015 */
 using UnityEngine;
 using System.Collections;
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-
+	//flips player sprite
 	private void _flip(){
 		if(this._isFacingRight){
 			this._transform.localScale = new Vector3(1f, 1f, 1f);// flip back to normal

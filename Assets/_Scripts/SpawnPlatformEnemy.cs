@@ -1,13 +1,14 @@
 ﻿/* Author: Arunan Shan */
 /* File: SpawnPlatformEnemy.cs */
 /* Creation Date: Oct 19, 2015 */
-/* Description: This script spawns the enemy only platform*/
+/* Description: Spawns the enemy only platform*/
 /* Last Modified by: Monday October 25, 2015 */
 using UnityEngine;
 using System.Collections;
 
 public class SpawnPlatformEnemy : MonoBehaviour {
-	
+
+	//PUBLIC INSTANCE VARIABLES
 	public int maxPlatforms = 50;
 	public GameObject platform;
 	public float horizontalMin = 50f;
@@ -25,7 +26,8 @@ public class SpawnPlatformEnemy : MonoBehaviour {
 		Spawn ();
 		
 	}
-	
+
+	//Instantiates enemy only platform
 	void Spawn()
 	{
 		for (int i = 0; i < maxPlatforms; i++)
